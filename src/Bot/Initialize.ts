@@ -1,6 +1,6 @@
 import Bot from "./Bot";
-import {readdirSync} from "fs";
-import {ApplicationCommandDataResolvable, Collection, Guild, Interaction} from "discord.js";
+import { readdirSync } from "fs";
+import { ApplicationCommandDataResolvable, Collection, Guild, Interaction } from "discord.js";
 import Button from "../Button";
 import SlashCommand from "../SlashCommand";
 import Modal from "../Modal";
@@ -14,23 +14,27 @@ const selectMenus = new Collection<string, SelectMenu>();
 
 export default function Initialize(bot: Bot): void {
     const slashCommandData: ApplicationCommandDataResolvable[] = [];
-    readdirSync("./src/Functions").filter(folderName => !folderName.endsWith(".ts")).forEach(folderName => {
-        readdirSync(`./src/Functions/${folderName}`).filter(fileName => fileName.endsWith(".ts")).forEach(fileName => {
-            const file: Button | SlashCommand | Modal | SelectMenu | Event = require(`../Functions/${folderName}/${fileName}`).default;
-            if (file instanceof Event) {
-                bot.on(file.eventName, (...args) => file.onCall(bot, ...args));
-            } else if (file instanceof SlashCommand) {
-                slashCommands.set(file.slashCommand.name, file);
-                slashCommandData.push(file.slashCommand.toJSON());
-            } else if (file instanceof Button) {
-                buttons.set(file.customId, file);
-            } else if (file instanceof Modal) {
-                modals.set(file.customId, file);
-            } else if (file instanceof SelectMenu) {
-                selectMenus.set(file.customId, file);
-            }
+    readdirSync("./src/Functions")
+        .filter(folderName => !folderName.endsWith(".ts"))
+        .forEach(folderName => {
+            readdirSync(`./src/Functions/${folderName}`)
+                .filter(fileName => fileName.endsWith(".ts"))
+                .forEach(fileName => {
+                    const file: Button | SlashCommand | Modal | SelectMenu | Event = require(`../Functions/${folderName}/${fileName}`).default;
+                    if (file instanceof Event) {
+                        bot.on(file.eventName, (...args) => file.onCall(bot, ...args));
+                    } else if (file instanceof SlashCommand) {
+                        slashCommands.set(file.slashCommand.name, file);
+                        slashCommandData.push(file.slashCommand.toJSON());
+                    } else if (file instanceof Button) {
+                        buttons.set(file.customId, file);
+                    } else if (file instanceof Modal) {
+                        modals.set(file.customId, file);
+                    } else if (file instanceof SelectMenu) {
+                        selectMenus.set(file.customId, file);
+                    }
+                });
         });
-    });
     bot.on("interactionCreate", (interaction: Interaction): void => {
         if (interaction.isCommand()) {
             const slashCommand: SlashCommand | undefined = slashCommands.get(interaction.commandName);

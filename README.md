@@ -20,8 +20,8 @@
 
 <hr/>
 
-- [X] Support Slash Commands
-- [X] Support Events
-- [X] Support Button 
-- [X] Support Modal
-- [X] Support SelectMenu
+-   [x] Support Slash Commands
+-   [x] Support Events
+-   [x] Support Button
+-   [x] Support Modal
+-   [x] Support SelectMenu
