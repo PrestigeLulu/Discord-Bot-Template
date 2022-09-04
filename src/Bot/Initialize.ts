@@ -55,9 +55,10 @@ export default function Initialize(bot: Bot): void {
         }
     });
     bot.on("ready", () => {
-        bot.guilds.cache.forEach((guild: Guild) => {
-            guild.commands.cache.clear();
-            guild.commands.set(slashCommandData);
-        });
+        bot.application?.commands.cache.clear();
+        bot.application?.commands.set(slashCommandData);
+    });
+    bot.on("guildCreate", (guild: Guild) => {
+        guild.commands.set(slashCommandData);
     });
 }
