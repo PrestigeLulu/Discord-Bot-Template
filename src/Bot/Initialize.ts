@@ -58,7 +58,4 @@ export default function Initialize(bot: Bot): void {
         bot.application?.commands.cache.clear();
         bot.application?.commands.set(slashCommandData);
     });
-    bot.on("guildCreate", (guild: Guild) => {
-        guild.commands.set(slashCommandData);
-    });
 }
