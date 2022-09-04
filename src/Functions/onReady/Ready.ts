@@ -1,7 +1,7 @@
 import Bot from "../../Bot/Bot";
 import Event from "../../Event";
 
-async function onCall(bot: Bot): Promise<void> {
+function onCall(bot: Bot): void {
     console.log(`Logged in ${bot.user?.tag}`);
 }
 
