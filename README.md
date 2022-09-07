@@ -11,8 +11,8 @@
 
 <p>This is a <code>Framework</code> for people who want to make bots using discord.js and TypeScript</p>
 
--   [x] Support Slash Commands
--   [x] Support Events
+-   [x] Support Slash Command
+-   [x] Support Event
 -   [x] Support Button
 -   [x] Support Modal
 -   [x] Support SelectMenu
