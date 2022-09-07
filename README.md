@@ -11,6 +11,8 @@
 
 <p>This is a <code>Framework</code> for people who want to make bots using discord.js and TypeScript</p>
 
+<hr/>
+
 -   [x] Support Slash Command
 -   [x] Support Event
 -   [x] Support Button
