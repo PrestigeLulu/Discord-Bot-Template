@@ -11,15 +11,6 @@
 
 <p>This is a <code>Framework</code> for people who want to make bots using discord.js and TypeScript</p>
 
-<hr />
-
-<div>
-    <h3>How to use ?</h3>
-    <p>Don't you know how to use it? Read the <a id="Wiki" href="https://github.com/dohwi/Discord-Bot-Template/wiki"><code>Wiki</code></a> and it will help you</p>
-</div>
-
-<hr/>
-
 -   [x] Support Slash Commands
 -   [x] Support Events
 -   [x] Support Button
