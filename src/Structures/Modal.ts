@@ -1,5 +1,5 @@
-import Bot from "./Bot/Bot";
-import { ModalBuilder, ModalSubmitInteraction } from "discord.js";
+import Bot from "../Bot/Bot";
+import {ModalBuilder, ModalSubmitInteraction} from "discord.js";
 
 type onInteractType = (bot: Bot, interaction: ModalSubmitInteraction) => Promise<void> | void;
 

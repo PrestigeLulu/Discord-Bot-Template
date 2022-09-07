@@ -1,5 +1,5 @@
-import { SelectMenuBuilder, SelectMenuInteraction } from "discord.js";
-import Bot from "./Bot/Bot";
+import {SelectMenuBuilder, SelectMenuInteraction} from "discord.js";
+import Bot from "../Bot/Bot";
 
 type onInteractType = (bot: Bot, interaction: SelectMenuInteraction) => Promise<void> | void;
 

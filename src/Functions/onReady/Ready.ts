@@ -1,5 +1,5 @@
 import Bot from "../../Bot/Bot";
-import Event from "../../Event";
+import Event from "../../Structures/Event";
 
 function onCall(bot: Bot): void {
     console.log(`Logged in ${bot.user?.tag}`);

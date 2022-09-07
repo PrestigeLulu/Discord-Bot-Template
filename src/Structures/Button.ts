@@ -1,5 +1,5 @@
-import Bot from "./Bot/Bot";
-import { ButtonBuilder, ButtonInteraction } from "discord.js";
+import Bot from "../Bot/Bot";
+import {ButtonBuilder, ButtonInteraction} from "discord.js";
 
 type onInteractType = (bot: Bot, interaction: ButtonInteraction) => Promise<void> | void;
 

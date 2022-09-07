@@ -1,4 +1,4 @@
-import { ClientOptions, GatewayIntentBits } from "discord.js";
+import {ClientOptions, GatewayIntentBits} from "discord.js";
 
 const ClientAllOptions: ClientOptions = {
     intents: [

@@ -1,5 +1,5 @@
-import { ClientEvents } from "discord.js";
-import Bot from "./Bot/Bot";
+import {ClientEvents} from "discord.js";
+import Bot from "../Bot/Bot";
 
 type onCallType = (bot: Bot, ...args: any[]) => Promise<void> | void;
 

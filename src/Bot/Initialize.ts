@@ -1,11 +1,11 @@
 import Bot from "./Bot";
-import { readdirSync } from "fs";
-import { ApplicationCommandDataResolvable, Collection, Guild, Interaction } from "discord.js";
-import Button from "../Button";
-import SlashCommand from "../SlashCommand";
-import Modal from "../Modal";
-import SelectMenu from "../SelectMenu";
-import Event from "../Event";
+import {readdirSync} from "fs";
+import {ApplicationCommandDataResolvable, Collection, Interaction} from "discord.js";
+import Button from "../Structures/Button";
+import SlashCommand from "../Structures/SlashCommand";
+import Modal from "../Structures/Modal";
+import SelectMenu from "../Structures/SelectMenu";
+import Event from "../Structures/Event";
 
 const slashCommands = new Collection<string, SlashCommand>();
 const buttons = new Collection<string, Button>();
