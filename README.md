@@ -1,4 +1,4 @@
-### <img src="https://www.svgrepo.com/show/353655/discord-icon.svg" width="15"> Discord Bot Template
+### <a id="discord-logo"><img src="https://www.svgrepo.com/show/353655/discord-icon.svg" width="15"></a> Discord Bot Template
 
 <div>
     <a id="TypeScript" href="https://typescriptlang.org/">
