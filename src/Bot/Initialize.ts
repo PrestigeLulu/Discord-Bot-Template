@@ -35,23 +35,23 @@ export default function Initialize(bot: Bot): void {
                     }
                 });
         });
-    bot.on("interactionCreate", (interaction: Interaction): void => {
+    bot.on("interactionCreate", async (interaction: Interaction): Promise<void> => {
         if (interaction instanceof ChatInputCommandInteraction) {
             const slashCommand: SlashCommand | undefined = slashCommands.get(interaction.commandName);
             if (slashCommand === undefined) return;
-            slashCommand.onInteract(bot, interaction);
+            await slashCommand.onInteract(bot, interaction);
         } else if (interaction instanceof ButtonInteraction) {
             const button: Button | undefined = buttons.get(interaction.customId);
             if (button === undefined) return;
-            button.onInteract(bot, interaction);
+            await button.onInteract(bot, interaction);
         } else if (interaction instanceof ModalSubmitInteraction) {
             const modal: Modal | undefined = modals.get(interaction.customId);
             if (modal === undefined) return;
-            modal.onInteract(bot, interaction);
+            await modal.onInteract(bot, interaction);
         } else if (interaction instanceof SelectMenuInteraction) {
             const selectMenu: SelectMenu | undefined = selectMenus.get(interaction.customId);
             if (selectMenu === undefined) return;
-            selectMenu.onInteract(bot, interaction);
+            await selectMenu.onInteract(bot, interaction);
         }
     });
     bot.on("ready", () => {
