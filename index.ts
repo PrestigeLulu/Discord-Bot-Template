@@ -1,3 +1,3 @@
-import Bot from './src/Bot/Bot';
+import Bot from './src/Bot/Bot'
 
-new Bot().login();
+new Bot().login()
