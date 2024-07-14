@@ -1,5 +1,6 @@
 import {
   ChatInputCommandInteraction,
+  SlashCommandBuilder,
   SlashCommandOptionsOnlyBuilder,
 } from 'discord.js'
 import Bot from '../Bot/Bot'
@@ -11,7 +12,9 @@ type onInteractType = (
 
 export default class SlashCommand {
   constructor(
-    public readonly slashCommand: SlashCommandOptionsOnlyBuilder,
+    public readonly slashCommand:
+      | SlashCommandOptionsOnlyBuilder
+      | Omit<SlashCommandBuilder, 'addSubcommand' | 'addSubcommandGroup'>,
     public readonly onInteract: onInteractType,
   ) {}
 }
