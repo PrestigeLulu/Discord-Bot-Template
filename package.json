@@ -6,11 +6,11 @@
     "dev": "nodemon index.ts"
   },
   "dependencies": {
-    "discord.js": "^14.14.1",
-    "dotenv": "^16.0.2",
-    "nodemon": "^3.1.0",
-    "prettier": "^3.2.5",
-    "ts-node": "^10.9.1"
+    "discord.js": "^14.22.1",
+    "dotenv": "^17.2.2",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2"
   },
   "version": "1.0.4"
 }
